@@ -7,7 +7,9 @@
   <meta name="description" content="Keronlyn Makeup – Maquiagem profissional para realçar a sua melhor versão. Agende seu atendimento ou conheça a Keronlyn Beauty & Academy." />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#FDFDFD] text-slate-900 antialiased">
+
+<!-- MUDANÇA 1: Alterado de bg-[#FDFDFD] para bg-white -->
+<body class="bg-white text-slate-900 antialiased">
   <main class="min-h-screen flex items-center">
     <section class="w-full">
       <div class="max-w-6xl mx-auto px-6 py-10 md:py-16 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
@@ -42,7 +44,8 @@
         </div>
 
         <div class="relative flex justify-center">
-          <div class="absolute -inset-10 bg-gradient-to-b from-[#ffd1dd] via-[#ffe6f0] to-transparent rounded-full blur-3xl opacity-80"></div>
+          <!-- MUDANÇA 2: A linha abaixo que criava o efeito rosa foi REMOVIDA. -->
+          
           <img
             src="keronlyn-photo.png"
             alt="Keronlyn, maquiadora profissional, sorrindo com vestido branco"
