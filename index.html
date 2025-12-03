@@ -57,9 +57,9 @@
     /* LOGO (DESKTOP) */
     .hero-logo {
       position: absolute;
-      width: 320px;       /* logo grande */
-      top: -160px;        /* ajustado para ficar acima do texto */
-      left: 60px;         /* aproximado do segundo "A" de CASA */
+      width: 320px;
+      top: -160px;
+      left: 60px;
       pointer-events: none;
       z-index: 1;
     }
@@ -81,7 +81,7 @@
       position: relative;
       z-index: 3;
 
-      /* SOMBRA SUAVE PROFISSIONAL (OPÇÃO 1) */
+      /* SOMBRA SUAVE PROFISSIONAL */
       text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.18);
     }
 
@@ -100,12 +100,14 @@
       margin-bottom: 18px;
     }
 
-    /* BOTÕES (DEGRADÊ DOURADO – OPÇÃO 3) */
+    /* ==========================
+       BOTÕES — ALINHAMENTO PERFEITO
+       ========================== */
 
     .buttons {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 14px;
       max-width: 560px;
       margin-bottom: 8px;
     }
@@ -113,19 +115,20 @@
     .cta-button {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 12px 18px;
+      justify-content: flex-start;
+      gap: 12px;
+      padding: 16px 22px;
       border-radius: 999px;
       border: none;
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
       transition: 0.25s ease;
 
-      /* DEGRADÊ PREMIUM AMARELO → DOURADO */
+      /* DEGRADÊ PREMIUM */
       background: linear-gradient(135deg, #ffdd55 0%, #ffb52e 100%);
-      color: #000000;
+      color: #000;
 
       /* SOMBRA DOURADA */
       box-shadow: 0 10px 24px rgba(255, 200, 0, 0.35);
@@ -140,21 +143,22 @@
     .cta-button span.label {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
     .cta-icon {
       width: 26px;
       height: 26px;
-      border-radius: 999px;
-      border: 2px solid var(--dark);
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
+    /* Seta alinhada ao canto direito */
     .cta-chevron {
-      opacity: 0.7;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
     }
 
     .cta-note {
@@ -162,7 +166,7 @@
       opacity: 0.9;
     }
 
-    /* RAQUEL – SEM CARD, SEM FUNDO COLORIDO */
+    /* RAQUEL – SEM CARD */
 
     .hero-image-wrapper {
       display: flex;
@@ -215,7 +219,10 @@
       scroll-behavior: smooth;
       scrollbar-width: none;
     }
-    .shoe-track::-webkit-scrollbar { display: none; }
+
+    .shoe-track::-webkit-scrollbar {
+      display: none;
+    }
 
     .shoe {
       flex: 0 0 auto;
@@ -253,9 +260,13 @@
       transition: 0.2s ease;
     }
 
-    .shoe-nav:hover { transform: translateY(-50%) scale(1.1); }
-    .shoe-nav.prev { left: 0; }
-    .shoe-nav.next { right: 0; }
+    .shoe-nav.prev {
+      left: 0;
+    }
+
+    .shoe-nav.next {
+      right: 0;
+    }
 
     .footer {
       margin-top: 32px;
@@ -269,7 +280,6 @@
        ====================== */
 
     @media (max-width: 900px) {
-      /* Espaçamento geral com laterais iguais */
       main {
         padding: 24px 20px 48px;
       }
@@ -278,25 +288,16 @@
         grid-template-columns: 1fr;
       }
 
-      /* Logo entra no fluxo normal e aparece inteira */
       .hero-text {
         padding-top: 16px;
         text-align: center;
       }
 
+      /* Logo no fluxo no mobile */
       .hero-logo {
         position: static;
         width: 220px;
         margin: 0 auto 8px;
-        pointer-events: none;
-        z-index: 1;
-      }
-
-      .hero-logo img {
-        width: 100%;
-        height: auto;
-        display: block;
-        object-fit: contain;
       }
 
       .hero-text h1 {
@@ -322,7 +323,7 @@
       }
 
       .shoe-nav {
-        display: none; /* no mobile arrasta com o dedo */
+        display: none;
       }
     }
   </style>
@@ -331,12 +332,11 @@
 <body>
 <main>
 
-  <!-- HERO COM LOGO SOBRE O H1 (DESKTOP) -->
+  <!-- HERO -->
   <section class="hero">
 
     <div class="hero-text">
 
-      <!-- LOGO -->
       <div class="hero-logo">
         <img src="logo.png" alt="Logo Casa das Sandálias" />
       </div>
@@ -350,22 +350,18 @@
       <h2>A loja favorita de quem ama calçados</h2>
 
       <div class="buttons">
-        <a
-          class="cta-button"
-          href="https://wa.me/5562982331156?text=Oi%20Amanda%2C%20quero%20fazer%20um%20pedido."
-        >
+        <a class="cta-button" href="https://wa.me/5562982331156">
           <span class="label">
-            <span class="cta-icon">💬</span> Vendedora — AMANDA
+            <span class="cta-icon">💬</span>
+            Vendedora — AMANDA
           </span>
           <span class="cta-chevron">➜</span>
         </a>
 
-        <a
-          class="cta-button"
-          href="https://wa.me/5562982331156?text=Quero%20entrar%20no%20grupo%20de%20ofertas."
-        >
+        <a class="cta-button" href="https://wa.me/5562982331156">
           <span class="label">
-            <span class="cta-icon">🔔</span> Acesse nosso Grupo de OFERTAS
+            <span class="cta-icon">🔔</span>
+            Acesse nosso Grupo de OFERTAS
           </span>
           <span class="cta-chevron">➜</span>
         </a>
@@ -374,7 +370,6 @@
       <p class="cta-note">Atendimento rápido e seguro.</p>
     </div>
 
-    <!-- RAQUEL -->
     <div class="hero-image-wrapper">
       <div class="hero-image">
         <img src="raquel.png" alt="Modelo Raquel" />
@@ -382,14 +377,14 @@
     </div>
   </section>
 
-  <!-- COLEÇÃO / CARROSSEL MANUAL -->
+  <!-- GALERIA -->
   <section class="gallery-section">
     <p class="gallery-title">Coleção em destaque</p>
     <p class="gallery-subtitle">Escolha o estilo que combina com você</p>
 
     <div class="shoe-layout">
 
-      <button class="shoe-nav prev" type="button" aria-label="Anterior">‹</button>
+      <button class="shoe-nav prev">‹</button>
 
       <div class="shoe-track">
         <figure class="shoe active">
@@ -405,7 +400,7 @@
         </figure>
       </div>
 
-      <button class="shoe-nav next" type="button" aria-label="Próximo">›</button>
+      <button class="shoe-nav next">›</button>
 
     </div>
   </section>
@@ -424,8 +419,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const prevBtn = document.querySelector(".shoe-nav.prev");
   const nextBtn = document.querySelector(".shoe-nav.next");
 
-  if (!layout || !track || slides.length === 0) return;
-
   let currentIndex = 0;
 
   function setActive(i) {
@@ -439,6 +432,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const layoutRect = layout.getBoundingClientRect();
     const slideRect = slide.getBoundingClientRect();
+
     const offset =
       (slideRect.left - layoutRect.left) +
       track.scrollLeft -
@@ -450,19 +444,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setActive(0);
 
-  if (prevBtn && nextBtn) {
-    prevBtn.addEventListener("click", () => {
-      scrollToIndex((currentIndex - 1 + slides.length) % slides.length);
-    });
+  prevBtn.addEventListener("click", () => {
+    scrollToIndex((currentIndex - 1 + slides.length) % slides.length);
+  });
 
-    nextBtn.addEventListener("click", () => {
-      scrollToIndex((currentIndex + 1) % slides.length);
-    });
-  }
+  nextBtn.addEventListener("click", () => {
+    scrollToIndex((currentIndex + 1) % slides.length);
+  });
 
   track.addEventListener("scroll", () => {
     const layoutRect = layout.getBoundingClientRect();
     const centerX = layoutRect.left + layoutRect.width / 2;
+
     let closest = 0;
     let minDist = Infinity;
 
@@ -470,6 +463,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const rect = s.getBoundingClientRect();
       const slideCenter = rect.left + rect.width / 2;
       const dist = Math.abs(slideCenter - centerX);
+
       if (dist < minDist) {
         minDist = dist;
         closest = i;
