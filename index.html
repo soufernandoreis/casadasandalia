@@ -115,7 +115,8 @@
     .cta-button {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center; /* ALTERADO */
+      position: relative; /* ADICIONADO */
       gap: 12px;
       padding: 16px 22px;
       border-radius: 999px;
@@ -156,7 +157,10 @@
 
     /* Seta alinhada ao canto direito */
     .cta-chevron {
-      margin-left: auto;
+      position: absolute; /* ALTERADO */
+      right: 22px; /* ADICIONADO */
+      top: 50%; /* ADICIONADO */
+      transform: translateY(-50%); /* ADICIONADO */
       display: flex;
       align-items: center;
     }
