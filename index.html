@@ -115,8 +115,8 @@
     .cta-button {
       display: flex;
       align-items: center;
-      justify-content: center; /* ALTERADO */
-      position: relative; /* ADICIONADO */
+      justify-content: center; /* ALTERAÇÃO 1: Centraliza o label (ícone + texto) */
+      position: relative;        /* ALTERAÇÃO 2: Permite posicionar a seta absolutamente */
       gap: 12px;
       padding: 16px 22px;
       border-radius: 999px;
@@ -157,10 +157,10 @@
 
     /* Seta alinhada ao canto direito */
     .cta-chevron {
-      position: absolute; /* ALTERADO */
-      right: 22px; /* ADICIONADO */
-      top: 50%; /* ADICIONADO */
-      transform: translateY(-50%); /* ADICIONADO */
+      position: absolute;        /* ALTERAÇÃO 3: Tira a seta do fluxo normal */
+      right: 22px;               /* ALTERAÇÃO 4: Alinha à direita */
+      top: 50%;                  /* ALTERAÇÃO 5: Alinha ao meio verticalmente */
+      transform: translateY(-50%); /* ALTERAÇÃO 6: Ajuste fino do alinhamento vertical */
       display: flex;
       align-items: center;
     }
