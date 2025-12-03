@@ -116,11 +116,10 @@
       /* ALINHAMENTO CENTRAL */
       display: flex;
       align-items: center;
-      justify-content: center; /* ALTERAÇÃO APLICADA */
-      position: relative;        /* ALTERAÇÃO APLICADA */
+      justify-content: center;
+      position: relative;
       
-      gap: 12px;
-      padding: 16px 22px;
+      padding: 16px 50px 16px 22px; /* padding-right maior para dar espaço à seta */
       border-radius: 999px;
       border: none;
       text-decoration: none;
@@ -128,6 +127,7 @@
       font-weight: 600;
       cursor: pointer;
       transition: 0.25s ease;
+      text-align: center;
 
       /* DEGRADÊ PREMIUM */
       background: linear-gradient(135deg, #ffdd55 0%, #ffb52e 100%);
@@ -146,7 +146,10 @@
     .cta-button span.label {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
+      flex: 1;
+      text-align: center;
     }
 
     .cta-icon {
