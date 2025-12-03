@@ -54,39 +54,36 @@
       position: relative;
     }
 
+    /* LOGO (DESKTOP) */
     .hero-logo {
-  position: absolute;
-  width: 320px;
-  top: -160px;    /* antes -190 → descemos 30px */
-  left: 60px;     /* mantém alinhamento horizontal */
-  pointer-events: none;
-  z-index: 1;
-}
+      position: absolute;
+      width: 320px;       /* logo grande */
+      top: -160px;        /* ajustado para ficar acima do texto */
+      left: 60px;         /* aproximado do segundo "A" de CASA */
+      pointer-events: none;
+      z-index: 1;
+    }
 
+    .hero-logo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
 
+    .hero-text h1 {
+      font-family: "Poppins", sans-serif;
+      font-size: clamp(3rem, 4vw + 1.6rem, 4rem);
+      line-height: 1.05;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 3;
 
-.hero-logo img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-
-
-.hero-text h1 {
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(3rem, 4vw + 1.6rem, 4rem);
-  line-height: 1.03;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-  position: relative;
-  z-index: 3;
-
-  /* SOMBRA SUAVE PROFISSIONAL — OPÇÃO 1 */
-  text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.18);
-}
-
+      /* SOMBRA SUAVE PROFISSIONAL (OPÇÃO 1) */
+      text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.18);
+    }
 
     .hero-text h1 span.word-yellow {
       color: var(--yellow-strong);
@@ -103,7 +100,7 @@
       margin-bottom: 18px;
     }
 
-    /* BOTÕES */
+    /* BOTÕES (DEGRADÊ DOURADO – OPÇÃO 3) */
 
     .buttons {
       display: flex;
@@ -113,34 +110,38 @@
       margin-bottom: 8px;
     }
 
-  /* BOTÃO PREMIUM AMARELO → DOURADO */
-.cta-button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: none;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.25s ease;
+    .cta-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: none;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.25s ease;
 
-  /* DEGRADÊ PREMIUM */
-  background: linear-gradient(135deg, #ffdd55 0%, #ffb52e 100%);
-  color: #000000;
+      /* DEGRADÊ PREMIUM AMARELO → DOURADO */
+      background: linear-gradient(135deg, #ffdd55 0%, #ffb52e 100%);
+      color: #000000;
 
-  box-shadow: 0 10px 24px rgba(255, 200, 0, 0.35);
-}
+      /* SOMBRA DOURADA */
+      box-shadow: 0 10px 24px rgba(255, 200, 0, 0.35);
+    }
 
-.cta-button:hover {
-  transform: translateY(-3px) scale(1.02);
-  background: linear-gradient(135deg, #ffe684 0%, #ffc244 100%);
-  box-shadow: 0 14px 32px rgba(255, 200, 0, 0.45);
-}
+    .cta-button:hover {
+      transform: translateY(-3px) scale(1.02);
+      background: linear-gradient(135deg, #ffe684 0%, #ffc244 100%);
+      box-shadow: 0 14px 32px rgba(255, 200, 0, 0.45);
+    }
 
-
+    .cta-button span.label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
     .cta-icon {
       width: 26px;
@@ -161,7 +162,7 @@
       opacity: 0.9;
     }
 
-    /* RAQUEL – SEM CARD, SEM FUNDO */
+    /* RAQUEL – SEM CARD, SEM FUNDO COLORIDO */
 
     .hero-image-wrapper {
       display: flex;
@@ -256,83 +257,86 @@
     .shoe-nav.prev { left: 0; }
     .shoe-nav.next { right: 0; }
 
+    .footer {
+      margin-top: 32px;
+      font-size: 0.8rem;
+      text-align: center;
+      opacity: 0.9;
+    }
+
     /* ======================
-       RESPONSIVO
+       RESPONSIVO (MOBILE)
        ====================== */
 
-       @media (max-width: 900px) {
-  /* Espaçamento geral da página no mobile */
-  main {
-    padding: 24px 20px 48px;   /* mesma margem esquerda/direita */
-  }
+    @media (max-width: 900px) {
+      /* Espaçamento geral com laterais iguais */
+      main {
+        padding: 24px 20px 48px;
+      }
 
-  /* HERO empilhado: texto em cima, Raquel embaixo */
-  .hero {
-    grid-template-columns: 1fr;
-  }
+      .hero {
+        grid-template-columns: 1fr;
+      }
 
-  /* Logo no fluxo normal, acima do H1, centralizada */
-  .hero-text {
-    padding-top: 16px;
-    text-align: center;        /* centraliza H1 e subtítulo */
-  }
+      /* Logo entra no fluxo normal e aparece inteira */
+      .hero-text {
+        padding-top: 16px;
+        text-align: center;
+      }
 
-  .hero-logo {
-    position: static;          /* deixa de ser absoluta no mobile */
-    width: 220px;              /* um pouco menor pra caber bem */
-    margin: 0 auto 8px;        /* centralizada, com respiro embaixo */
-    pointer-events: none;
-  }
+      .hero-logo {
+        position: static;
+        width: 220px;
+        margin: 0 auto 8px;
+        pointer-events: none;
+        z-index: 1;
+      }
 
-  .hero-logo img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-  }
+      .hero-logo img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+      }
 
-  .hero-text h1 {
-    text-align: center;
-  }
+      .hero-text h1 {
+        text-align: center;
+      }
 
-  .hero-image-wrapper {
-    justify-content: center;
-    margin-top: 16px;
-  }
+      .hero-image-wrapper {
+        justify-content: center;
+        margin-top: 16px;
+      }
 
-  /* Carrossel de produtos no mobile */
-  .shoe-layout {
-    padding: 12px 0;
-  }
+      .shoe-layout {
+        padding: 12px 0;
+      }
 
-  .shoe-track {
-    gap: 32px;
-  }
+      .shoe-track {
+        gap: 32px;
+      }
 
-  .shoe {
-    width: 220px;
-    max-width: 70vw;
-  }
+      .shoe {
+        width: 220px;
+        max-width: 70vw;
+      }
 
-  .shoe-nav {
-    display: none;  /* sem setas no mobile: arrasta com o dedo */
-  }
-}
-
+      .shoe-nav {
+        display: none; /* no mobile arrasta com o dedo */
+      }
+    }
   </style>
 </head>
 
 <body>
 <main>
 
-  <!-- ======================
-       HERO COM LOGO NO H1
-       ====================== -->
+  <!-- HERO COM LOGO SOBRE O H1 (DESKTOP) -->
   <section class="hero">
 
     <div class="hero-text">
 
-      <!-- LOGO SOBRE O "A" -->
+      <!-- LOGO -->
       <div class="hero-logo">
         <img src="logo.png" alt="Logo Casa das Sandálias" />
       </div>
@@ -378,16 +382,14 @@
     </div>
   </section>
 
-  <!-- ======================
-       CARROSSEL
-       ====================== -->
+  <!-- COLEÇÃO / CARROSSEL MANUAL -->
   <section class="gallery-section">
     <p class="gallery-title">Coleção em destaque</p>
     <p class="gallery-subtitle">Escolha o estilo que combina com você</p>
 
     <div class="shoe-layout">
 
-      <button class="shoe-nav prev">‹</button>
+      <button class="shoe-nav prev" type="button" aria-label="Anterior">‹</button>
 
       <div class="shoe-track">
         <figure class="shoe active">
@@ -403,7 +405,7 @@
         </figure>
       </div>
 
-      <button class="shoe-nav next">›</button>
+      <button class="shoe-nav next" type="button" aria-label="Próximo">›</button>
 
     </div>
   </section>
@@ -421,6 +423,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const slides = Array.from(track.querySelectorAll(".shoe"));
   const prevBtn = document.querySelector(".shoe-nav.prev");
   const nextBtn = document.querySelector(".shoe-nav.next");
+
+  if (!layout || !track || slides.length === 0) return;
 
   let currentIndex = 0;
 
@@ -446,13 +450,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setActive(0);
 
-  prevBtn.addEventListener("click", () => {
-    scrollToIndex((currentIndex - 1 + slides.length) % slides.length);
-  });
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", () => {
+      scrollToIndex((currentIndex - 1 + slides.length) % slides.length);
+    });
 
-  nextBtn.addEventListener("click", () => {
-    scrollToIndex((currentIndex + 1) % slides.length);
-  });
+    nextBtn.addEventListener("click", () => {
+      scrollToIndex((currentIndex + 1) % slides.length);
+    });
+  }
 
   track.addEventListener("scroll", () => {
     const layoutRect = layout.getBoundingClientRect();
