@@ -223,90 +223,97 @@
 
     /* COLEÇÃO */
 
-    .gallery-section {
-      margin-top: 24px;
-      padding-top: 22px;
-      border-top: 1px solid rgba(0, 0, 0, 0.06);
-    }
+    /* ===========================================
+   COLEÇÃO — NOVO CARROSSEL INFINITO
+   =========================================== */
 
-    .gallery-title {
-      font-family: "Poppins", system-ui, sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #7a7a7a;
-      margin-bottom: 6px;
-    }
+.gallery-section {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
 
-    .gallery-subtitle {
-      font-family: "Poppins", system-ui, sans-serif;
-      font-size: 1.06rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
+.gallery-title {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #7a7a7a;
+  margin-bottom: 6px;
+}
 
-    /* Layout "espalhado" dos calçados – sem card */
+.gallery-subtitle {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 1.06rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
 
-    .shoe-layout {
-      position: relative;
-      height: 260px;
-      margin-bottom: 8px;
-    }
+/* === NOVO CARROSSEL INFINITO === */
 
-    .shoe {
-      position: absolute;
-      width: 250px;
-      max-width: 32vw;
-    }
+.shoe-layout {
+  position: relative;
+  overflow: hidden;
+  padding: 12px 0;
+}
 
-    .shoe img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      display: block;
-      background: transparent;
-      filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.35));
-    }
+.shoe-track {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  animation: scrollShoes 18s linear infinite;
+}
 
-    .shoe-1 {
-      left: 0;
-      top: 36px;
-      transform: rotate(-7deg);
-    }
+.shoe {
+  flex: 0 0 auto;
+  width: 230px;
+  max-width: 40vw;
+}
 
-    .shoe-2 {
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%) rotate(3deg);
-    }
+.shoe img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.35));
+}
 
-    .shoe-3 {
-      right: 0;
-      top: 44px;
-      transform: rotate(7deg);
-    }
+/* animação contínua */
+@keyframes scrollShoes {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
-    /* Responsivo para mobile */
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      .hero-image-wrapper {
-        justify-content: center;
-      }
-      .shoe-layout {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-      }
-      .shoe {
-        position: static;
-        transform: none !important;
-        max-width: 100%;
-      }
-    }
+/* ===========================================
+   RESPONSIVO — mantém o comportamento do HERO
+   + ajusta o carrossel no mobile
+   =========================================== */
+
+@media (max-width: 900px) {
+
+  /* HERO — ESTA É A PARTE QUE VOCÊ SENTIU FALTA */
+  .hero {
+    grid-template-columns: 1fr; /* texto em cima / Raquel embaixo */
+  }
+
+  .hero-image-wrapper {
+    justify-content: center; /* centraliza Raquel no mobile */
+  }
+
+  /* Carrossel mobile */
+  .shoe-track {
+    gap: 32px;
+    animation-duration: 22s;
+  }
+
+  .shoe {
+    width: 200px;
+    max-width: 60vw;
+  }
+}
+
 
     .footer {
       margin-top: 32px;
