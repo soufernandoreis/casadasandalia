@@ -443,6 +443,45 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+<style>
+  /* FORÇA O BOTÃO A FICAR DOURADO — FUNCIONA EM QUALQUER NAVEGADOR */
+  a.cta-button {
+    background: #f8c94b !important;
+    color: #000 !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    padding: 16px 22px !important;
+    border-radius: 999px !important;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18) !important;
+  }
+
+  a.cta-button:hover {
+    background: #ffdb6e !important;
+  }
+
+  a.cta-button .label {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  a.cta-button .cta-icon {
+    width: 26px !important;
+    height: 26px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  a.cta-button .cta-chevron {
+    margin-left: auto !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+</style>
 
 </body>
 </html>
