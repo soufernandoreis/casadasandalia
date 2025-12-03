@@ -7,13 +7,12 @@
 
   <!-- Fontes Google -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;800&display=swap"
     rel="stylesheet"
   />
 
   <style>
     :root {
-      --yellow-light: #ffe982;
       --yellow: #ffd54a;
       --yellow-strong: #ffb52e;
       --dark: #1f1f1f;
@@ -31,7 +30,7 @@
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", sans-serif;
       color: var(--dark);
-      background: linear-gradient(135deg, #fff7c4 0, var(--yellow) 40%, var(--yellow-strong) 100%);
+      background: #ffffff; /* FUNDO BRANCO */
     }
 
     main {
@@ -46,12 +45,12 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 18px;
+      margin-bottom: 22px;
     }
 
     .brand-logo {
-      width: 52px;
-      height: 52px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       background: radial-gradient(circle at 30% 20%, #fffbe5 0, #f7c948 45%, #f3a629 100%);
       display: inline-flex;
@@ -62,7 +61,7 @@
     }
 
     .brand-logo img {
-      width: 70%;
+      width: 72%;
       height: auto;
       object-fit: contain;
       display: block;
@@ -76,14 +75,14 @@
 
     .brand-handle {
       font-family: "Poppins", system-ui, sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     .brand-tagline {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       opacity: 0.85;
     }
 
@@ -105,25 +104,30 @@
 
     .hero-text h1 {
       font-family: "Poppins", system-ui, sans-serif;
-      font-size: clamp(2.5rem, 3.4vw + 1.4rem, 3.3rem);
-      line-height: 1.05;
-      letter-spacing: 0.10em;
+      font-size: clamp(3rem, 4vw + 1.6rem, 3.8rem); /* H1 MAIOR */
+      line-height: 1.03;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+    }
+
+    .hero-text h1 span {
+      display: inline-block;
+    }
+
+    .hero-text h1 .word-yellow {
+      color: var(--yellow-strong);
+    }
+
+    .hero-text h1 .word-dark {
+      color: var(--dark);
     }
 
     .hero-text h2 {
       font-family: "Poppins", system-ui, sans-serif;
       font-size: 1.15rem;
       font-weight: 500;
-      margin-bottom: 14px;
-    }
-
-    .subtitle {
-      font-size: 0.98rem;
-      font-weight: 500;
-      margin-bottom: 22px;
-      max-width: 480px;
+      margin-bottom: 18px;
     }
 
     .buttons {
@@ -146,7 +150,7 @@
       color: var(--dark);
       font-size: 0.95rem;
       font-weight: 600;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
       cursor: pointer;
       transform: translateY(0) scale(1);
       transition:
@@ -161,12 +165,8 @@
     }
 
     @keyframes floatPulse {
-      0%, 100% {
-        transform: translateY(0) scale(1);
-      }
-      50% {
-        transform: translateY(-2px) scale(1.01);
-      }
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-2px) scale(1.01); }
     }
 
     .cta-button span.label {
@@ -193,13 +193,13 @@
 
     .cta-button:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.26);
       background: #fffef6;
     }
 
     .cta-button:active {
       transform: translateY(0) scale(0.97);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
       animation: none;
     }
 
@@ -222,8 +222,8 @@
       max-width: 320px;
       border-radius: 32px;
       overflow: hidden;
-      box-shadow: 0 26px 50px rgba(0, 0, 0, 0.45);
-      background: radial-gradient(circle at top, #fffbe8 0, #ffe296 55%, #ffc857 100%);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+      background: radial-gradient(circle at top, #fffdf2 0, #ffe296 55%, #ffc857 100%);
     }
 
     .hero-image::before {
@@ -244,7 +244,7 @@
     /* COLEÇÃO */
 
     .gallery-section {
-      margin-top: 32px;
+      margin-top: 24px;
       padding-top: 22px;
       border-top: 1px solid rgba(0, 0, 0, 0.06);
     }
@@ -255,7 +255,7 @@
       font-weight: 600;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #5a5a5a;
+      color: #7a7a7a;
       margin-bottom: 6px;
     }
 
@@ -266,12 +266,7 @@
       margin-bottom: 12px;
     }
 
-    .gallery-subcopy {
-      font-size: 0.9rem;
-      margin-bottom: 18px;
-    }
-
-    /* Layout "espalhado" dos calçados */
+    /* Layout "espalhado" dos calçados – sem card */
 
     .shoe-layout {
       position: relative;
@@ -283,10 +278,6 @@
       position: absolute;
       width: 250px;
       max-width: 32vw;
-      border-radius: 22px;
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4);
-      background: #ffffff;
-      padding: 10px;
     }
 
     .shoe img {
@@ -294,6 +285,9 @@
       height: auto;
       object-fit: contain;
       display: block;
+      background: transparent;
+      /* sombra no próprio produto, não em card */
+      filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.35));
     }
 
     .shoe-1 {
@@ -316,11 +310,17 @@
 
     /* Responsivo para não quebrar no mobile */
     @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero-image-wrapper {
+        justify-content: center;
+      }
       .shoe-layout {
         height: auto;
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 18px;
       }
       .shoe {
         position: static;
@@ -353,13 +353,13 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-text">
-        <h1>CASA DAS SANDÁLIAS</h1>
-        <h2>A loja favorita de quem ama calçados</h2>
+        <h1>
+          <span class="word-yellow">CASA</span>
+          <span class="word-dark">DAS</span>
+          <span class="word-yellow">SANDÁLIAS</span>
+        </h1>
 
-        <p class="subtitle">
-          Encontre as sandálias, tamancos e botas perfeitos para o seu dia a dia,
-          com estilo e conforto em cada detalhe.
-        </p>
+        <h2>A loja favorita de quem ama calçados</h2>
 
         <div class="buttons">
           <!-- BOTÃO VENDEDORA -->
@@ -408,9 +408,6 @@
     <section class="gallery-section">
       <p class="gallery-title">Coleção em destaque</p>
       <p class="gallery-subtitle">Escolha o estilo que combina com você</p>
-      <p class="gallery-subcopy">
-        Veja alguns modelos que fazem sucesso entre nossas clientes:
-      </p>
 
       <div class="shoe-layout">
         <figure class="shoe shoe-1">
