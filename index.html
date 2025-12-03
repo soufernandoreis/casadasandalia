@@ -49,11 +49,11 @@
     }
 
     .brand-logo {
-      width: 250px;   /* mesmo tamanho visual do tamanco */
+      width: 250px;   /* tamanho parecido com o tamanco */
       height: auto;
       border-radius: 0;
-      background: none;    /* sem gradiente / sem card */
-      box-shadow: none;    /* sem sombra de card */
+      background: none;
+      box-shadow: none;
       overflow: visible;
     }
 
@@ -65,7 +65,7 @@
     }
 
     .brand-text {
-      display: none; /* remove @casadasandalias + tagline */
+      display: none; /* sem @casadasandalias / tagline */
     }
 
     /* HERO */
@@ -78,15 +78,9 @@
       padding: 10px 0 32px;
     }
 
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-    }
-
     .hero-text h1 {
       font-family: "Poppins", system-ui, sans-serif;
-      font-size: clamp(3rem, 4vw + 1.6rem, 3.8rem); /* H1 MAIOR */
+      font-size: clamp(3rem, 4vw + 1.6rem, 3.8rem);
       line-height: 1.03;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -202,14 +196,14 @@
       position: relative;
       width: 100%;
       max-width: 350px;
-      border-radius: 0;      /* sem borda arredondada */
-      overflow: visible;     /* não corta a imagem */
-      box-shadow: none;      /* sem card */
-      background: none;      /* fundo branco da página */
+      border-radius: 0;
+      overflow: visible;
+      box-shadow: none;
+      background: none;
     }
 
     .hero-image::before {
-      content: none;         /* remove overlay de luz */
+      content: none;
     }
 
     .hero-image img {
@@ -217,103 +211,118 @@
       height: auto;
       object-fit: contain;
       display: block;
-      /* apenas sombra da própria pessoa, sem card */
       filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.25));
     }
 
-    /* COLEÇÃO */
-
     /* ===========================================
-   COLEÇÃO — NOVO CARROSSEL INFINITO
-   =========================================== */
+       COLEÇÃO — CARROSSEL MANUAL
+       =========================================== */
 
-.gallery-section {
-  margin-top: 24px;
-  padding-top: 22px;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-}
+    .gallery-section {
+      margin-top: 24px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
 
-.gallery-title {
-  font-family: "Poppins", system-ui, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #7a7a7a;
-  margin-bottom: 6px;
-}
+    .gallery-title {
+      font-family: "Poppins", system-ui, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #7a7a7a;
+      margin-bottom: 6px;
+    }
 
-.gallery-subtitle {
-  font-family: "Poppins", system-ui, sans-serif;
-  font-size: 1.06rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
+    .gallery-subtitle {
+      font-family: "Poppins", system-ui, sans-serif;
+      font-size: 1.06rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
 
-/* === NOVO CARROSSEL INFINITO === */
+    .shoe-layout {
+      position: relative;
+      overflow: hidden;
+      padding: 16px 32px; /* espaço para as setas */
+    }
 
-.shoe-layout {
-  position: relative;
-  overflow: hidden;
-  padding: 12px 0;
-}
+    .shoe-track {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
 
-.shoe-track {
-  display: flex;
-  align-items: center;
-  gap: 48px;
-  animation: scrollShoes 18s linear infinite;
-}
+    .shoe-track::-webkit-scrollbar {
+      display: none;
+    }
 
-.shoe {
-  flex: 0 0 auto;
-  width: 230px;
-  max-width: 40vw;
-}
+    .shoe {
+      flex: 0 0 auto;
+      width: 230px;
+      max-width: 40vw;
+    }
 
-.shoe img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  background: transparent;
-  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.35));
-}
+    .shoe img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      background: transparent;
+      filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.35));
+      transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+    }
 
-/* animação contínua */
-@keyframes scrollShoes {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+    /* imagem em destaque "pulando pra frente" */
+    .shoe.active img {
+      transform: scale(1.06) translateY(-6px);
+      filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.5));
+    }
 
-/* ===========================================
-   RESPONSIVO — mantém o comportamento do HERO
-   + ajusta o carrossel no mobile
-   =========================================== */
+    .shoe-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      transition:
+        transform 0.18s ease-out,
+        box-shadow 0.18s ease-out,
+        background 0.18s ease-out;
+    }
 
-@media (max-width: 900px) {
+    .shoe-nav:hover {
+      transform: translateY(-50%) scale(1.05);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+    }
 
-  /* HERO — ESTA É A PARTE QUE VOCÊ SENTIU FALTA */
-  .hero {
-    grid-template-columns: 1fr; /* texto em cima / Raquel embaixo */
-  }
+    .shoe-nav:active {
+      transform: translateY(-50%) scale(0.97);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
 
-  .hero-image-wrapper {
-    justify-content: center; /* centraliza Raquel no mobile */
-  }
+    .shoe-nav.prev {
+      left: 0;
+    }
 
-  /* Carrossel mobile */
-  .shoe-track {
-    gap: 32px;
-    animation-duration: 22s;
-  }
-
-  .shoe {
-    width: 200px;
-    max-width: 60vw;
-  }
-}
-
+    .shoe-nav.next {
+      right: 0;
+    }
 
     .footer {
       margin-top: 32px;
@@ -321,11 +330,42 @@
       text-align: center;
       opacity: 0.9;
     }
+
+    /* ===========================================
+       RESPONSIVO
+       =========================================== */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image-wrapper {
+        justify-content: center;
+      }
+
+      .shoe-layout {
+        padding: 12px 0;
+      }
+
+      .shoe-track {
+        gap: 32px;
+      }
+
+      .shoe {
+        width: 220px;
+        max-width: 70vw;
+      }
+
+      .shoe-nav {
+        display: none; /* sem setas no mobile: arrasta o carrossel */
+      }
+    }
   </style>
 </head>
 <body>
   <main>
-    <!-- LOGO SOZINHA, GRANDE -->
+    <!-- LOGO -->
     <header class="brand">
       <div class="brand-logo">
         <img src="logo.png" alt="Logo Casa das Sandálias" />
@@ -344,7 +384,6 @@
         <h2>A loja favorita de quem ama calçados</h2>
 
         <div class="buttons">
-          <!-- BOTÃO VENDEDORA -->
           <a
             class="cta-button"
             href="https://wa.me/5562982331156?text=Oi%20Amanda%2C%20quero%20fazer%20um%20pedido%20pela%20landing%20Casa%20das%20Sand%C3%A1lias."
@@ -358,7 +397,6 @@
             <span class="cta-chevron">➜</span>
           </a>
 
-          <!-- BOTÃO GRUPO DE OFERTAS -->
           <a
             class="cta-button"
             href="https://wa.me/5562982331156?text=Oi%2C%20quero%20entrar%20no%20Grupo%20de%20Ofertas%20da%20Casa%20das%20Sand%C3%A1lias."
@@ -378,7 +416,6 @@
         </p>
       </div>
 
-      <!-- RAQUEL SEM CARD / FUNDO LIMPO -->
       <div class="hero-image-wrapper">
         <div class="hero-image">
           <img src="raquel.png" alt="Cliente usando sandália - Raquel" />
@@ -386,48 +423,117 @@
       </div>
     </section>
 
-    <!-- COLEÇÃO / FOTOS ESPALHADAS -->
-    <<section class="gallery-section">
+    <!-- COLEÇÃO / CARROSSEL MANUAL -->
+    <section class="gallery-section">
       <p class="gallery-title">Coleção em destaque</p>
       <p class="gallery-subtitle">Escolha o estilo que combina com você</p>
-    
+
       <div class="shoe-layout">
+        <button class="shoe-nav prev" type="button" aria-label="Anterior">‹</button>
+
         <div class="shoe-track">
-    
-          <!-- Bloco 1 -->
-          <figure class="shoe">
+          <figure class="shoe active">
             <img src="tamanco.png" alt="Tamanco" />
           </figure>
-    
+
           <figure class="shoe">
             <img src="sandalia.png" alt="Sandália" />
           </figure>
-    
+
           <figure class="shoe">
             <img src="bota.png" alt="Bota" />
           </figure>
-    
-          <!-- Bloco duplicado para loop infinito -->
-          <figure class="shoe">
-            <img src="tamanco.png" alt="Tamanco" />
-          </figure>
-    
-          <figure class="shoe">
-            <img src="sandalia.png" alt="Sandália" />
-          </figure>
-    
-          <figure class="shoe">
-            <img src="bota.png" alt="Bota" />
-          </figure>
-    
         </div>
+
+        <button class="shoe-nav next" type="button" aria-label="Próximo">›</button>
       </div>
     </section>
-    
 
     <footer class="footer">
       @casadasandalias — atendimento pelo WhatsApp: (62) 98233-1156
     </footer>
   </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const layout = document.querySelector(".shoe-layout");
+      const track = document.querySelector(".shoe-track");
+      const slides = track ? Array.from(track.querySelectorAll(".shoe")) : [];
+      const prevBtn = document.querySelector(".shoe-nav.prev");
+      const nextBtn = document.querySelector(".shoe-nav.next");
+
+      if (!layout || !track || slides.length === 0) return;
+
+      let currentIndex = 0;
+
+      function setActive(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === index);
+        });
+        currentIndex = index;
+      }
+
+      function scrollToIndex(index) {
+        const slide = slides[index];
+        if (!slide) return;
+
+        const layoutRect = layout.getBoundingClientRect();
+        const slideRect = slide.getBoundingClientRect();
+        const currentScroll = track.scrollLeft;
+
+        const offset =
+          (slideRect.left - layoutRect.left) +
+          currentScroll -
+          (layoutRect.width - slideRect.width) / 2;
+
+        track.scrollTo({ left: offset, behavior: "smooth" });
+        setActive(index);
+      }
+
+      // estado inicial
+      setActive(0);
+
+      // Navegação por setas (desktop)
+      if (prevBtn && nextBtn) {
+        prevBtn.addEventListener("click", () => {
+          const nextIndex =
+            (currentIndex - 1 + slides.length) % slides.length;
+          scrollToIndex(nextIndex);
+        });
+
+        nextBtn.addEventListener("click", () => {
+          const nextIndex = (currentIndex + 1) % slides.length;
+          scrollToIndex(nextIndex);
+        });
+      }
+
+      // Atualiza imagem ativa quando o usuário scrolla (PC ou mobile)
+      let scrollRaf = null;
+      track.addEventListener("scroll", () => {
+        if (scrollRaf) return;
+        scrollRaf = window.requestAnimationFrame(() => {
+          scrollRaf = null;
+
+          const layoutRect = layout.getBoundingClientRect();
+          const centerX = layoutRect.left + layoutRect.width / 2;
+
+          let closestIndex = 0;
+          let minDist = Infinity;
+
+          slides.forEach((slide, i) => {
+            const rect = slide.getBoundingClientRect();
+            const slideCenter = rect.left + rect.width / 2;
+            const dist = Math.abs(slideCenter - centerX);
+            if (dist < minDist) {
+              minDist = dist;
+              closestIndex = i;
+            }
+          });
+
+          setActive(closestIndex);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
