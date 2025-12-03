@@ -249,15 +249,65 @@
        RESPONSIVO
        ====================== */
 
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-image-wrapper { justify-content: center; }
+       @media (max-width: 900px) {
+  /* Espaçamento geral da página no mobile */
+  main {
+    padding: 24px 20px 48px;   /* mesma margem esquerda/direita */
+  }
 
-      .shoe-layout { padding: 12px 0; }
-      .shoe-track { gap: 32px; }
-      .shoe { width: 220px; max-width: 70vw; }
-      .shoe-nav { display: none; }
-    }
+  /* HERO empilhado: texto em cima, Raquel embaixo */
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  /* Logo no fluxo normal, acima do H1, centralizada */
+  .hero-text {
+    padding-top: 16px;
+    text-align: center;        /* centraliza H1 e subtítulo */
+  }
+
+  .hero-logo {
+    position: static;          /* deixa de ser absoluta no mobile */
+    width: 220px;              /* um pouco menor pra caber bem */
+    margin: 0 auto 8px;        /* centralizada, com respiro embaixo */
+    pointer-events: none;
+  }
+
+  .hero-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .hero-text h1 {
+    text-align: center;
+  }
+
+  .hero-image-wrapper {
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  /* Carrossel de produtos no mobile */
+  .shoe-layout {
+    padding: 12px 0;
+  }
+
+  .shoe-track {
+    gap: 32px;
+  }
+
+  .shoe {
+    width: 220px;
+    max-width: 70vw;
+  }
+
+  .shoe-nav {
+    display: none;  /* sem setas no mobile: arrasta com o dedo */
+  }
+}
+
   </style>
 </head>
 
