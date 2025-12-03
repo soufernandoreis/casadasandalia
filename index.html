@@ -113,27 +113,35 @@
       margin-bottom: 8px;
     }
 
-    .cta-button {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 18px;
-      border-radius: 999px;
-      background: var(--white);
-      border: none;
-      text-decoration: none;
-      color: var(--dark);
-      font-size: 0.95rem;
-      font-weight: 600;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
+    /* BOTÃO PREMIUM AMARELO → DOURADO */
+.cta-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: none;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
 
-    .cta-button:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
-    }
+  /* DEGRADÊ PREMIUM */
+  background: linear-gradient(135deg, #ffdd55 0%, #ffb52e 100%);
+  color: #000000;
+
+  /* SOMBRA DOURADA */
+  box-shadow: 0 10px 24px rgba(255, 200, 0, 0.35);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.02);
+
+  background: linear-gradient(135deg, #ffe684 0%, #ffc244 100%);
+  box-shadow: 0 14px 32px rgba(255, 200, 0, 0.45);
+}
+
 
     .cta-icon {
       width: 26px;
