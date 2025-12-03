@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -39,7 +39,7 @@
     }
 
     /* ======================
-       HERO & LOGO NO H1
+       HERO & LOGO
        ====================== */
 
     .hero {
@@ -80,16 +80,13 @@
       margin-bottom: 8px;
       position: relative;
       z-index: 3;
-
-      /* SOMBRA SUAVE PROFISSIONAL */
       text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.18);
     }
 
-    .hero-text h1 span.word-yellow {
+    .word-yellow {
       color: var(--yellow-strong);
     }
-
-    .hero-text h1 span.word-dark {
+    .word-dark {
       color: var(--dark);
     }
 
@@ -100,92 +97,7 @@
       margin-bottom: 18px;
     }
 
-    /* ==========================
-       BOTÕES — ALINHAMENTO PERFEITO
-       ========================== */
-
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      max-width: 560px;
-      margin-bottom: 8px;
-    }
-
-    .cta-button {
-      /* ALINHAMENTO CENTRAL */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      
-      padding: 16px 50px 16px 22px;
-      border-radius: 999px;
-      border: none;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.25s ease;
-      width: 100%;
-
-      /* DEGRADÊ PREMIUM */
-      background: linear-gradient(135deg, #ffdd55 0%, #ffb52e 100%);
-      color: #000;
-
-      /* SOMBRA DOURADA */
-      box-shadow: 0 10px 24px rgba(255, 200, 0, 0.35);
-    }
-
-    .cta-button:hover {
-      transform: translateY(-3px) scale(1.02);
-      background: linear-gradient(135deg, #ffe684 0%, #ffc244 100%);
-      box-shadow: 0 14px 32px rgba(255, 200, 0, 0.45);
-    }
-
-    .cta-button span.label {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      flex: 1 1 auto;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      min-width: 0;
-    }
-    
-    .cta-button span.label > * {
-      flex-shrink: 0;
-    }
-
-    .cta-icon {
-      width: 26px;
-      height: 26px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Seta alinhada ao canto direito */
-    .cta-chevron {
-      /* POSICIONAMENTO DA SETA */
-      position: absolute;         /* ALTERAÇÃO APLICADA */
-      right: 22px;                /* ALTERAÇÃO APLICADA */
-      top: 50%;                   /* ALTERAÇÃO APLICADA */
-      transform: translateY(-50%);  /* ALTERAÇÃO APLICADA */
-      
-      display: flex;
-      align-items: center;
-    }
-
-    .cta-note {
-      font-size: 0.86rem;
-      opacity: 0.9;
-    }
-
-    /* RAQUEL – SEM CARD */
-
+    /* RAQUEL */
     .hero-image-wrapper {
       display: flex;
       justify-content: flex-end;
@@ -199,7 +111,26 @@
     }
 
     /* ======================
-       CARROSSEL MANUAL
+       BOTÕES (ESTRUTURA BASE)
+       ====================== */
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 560px;
+      margin-bottom: 8px;
+    }
+
+    /* OBS: O estilo final dos botões será sobrescrito no final */
+
+    .cta-note {
+      font-size: 0.86rem;
+      opacity: 0.9;
+    }
+
+    /* ======================
+       GALERIA
        ====================== */
 
     .gallery-section {
@@ -255,11 +186,6 @@
       transition: 0.25s ease;
     }
 
-    .shoe.active img {
-      transform: scale(1.06) translateY(-6px);
-      filter: drop-shadow(0 20px 34px rgba(0,0,0,0.5));
-    }
-
     .shoe-nav {
       position: absolute;
       top: 50%;
@@ -275,29 +201,17 @@
       cursor: pointer;
       font-size: 22px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-      transition: 0.2s ease;
     }
 
-    .shoe-nav.prev {
-      left: 0;
-    }
-
-    .shoe-nav.next {
-      right: 0;
-    }
-
-    .footer {
-      margin-top: 32px;
-      font-size: 0.8rem;
-      text-align: center;
-      opacity: 0.9;
-    }
+    .shoe-nav.prev { left: 0; }
+    .shoe-nav.next { right: 0; }
 
     /* ======================
-       RESPONSIVO (MOBILE)
+       MOBILE
        ====================== */
 
     @media (max-width: 900px) {
+
       main {
         padding: 24px 20px 48px;
       }
@@ -311,15 +225,10 @@
         text-align: center;
       }
 
-      /* Logo no fluxo no mobile */
       .hero-logo {
         position: static;
         width: 220px;
         margin: 0 auto 8px;
-      }
-
-      .hero-text h1 {
-        text-align: center;
       }
 
       .hero-image-wrapper {
@@ -370,16 +279,14 @@
       <div class="buttons">
         <a class="cta-button" href="https://wa.me/5562982331156">
           <span class="label">
-            <span class="cta-icon">💬</span>
-            Vendedora — AMANDA
+            <span class="cta-icon">💬</span> Vendedora — AMANDA
           </span>
           <span class="cta-chevron">➜</span>
         </a>
 
         <a class="cta-button" href="https://wa.me/5562982331156">
           <span class="label">
-            <span class="cta-icon">🔔</span>
-            Acesse nosso Grupo de OFERTAS
+            <span class="cta-icon">🔔</span> Acesse nosso Grupo de OFERTAS
           </span>
           <span class="cta-chevron">➜</span>
         </a>
@@ -395,31 +302,30 @@
     </div>
   </section>
 
+
   <!-- GALERIA -->
   <section class="gallery-section">
     <p class="gallery-title">Coleção em destaque</p>
     <p class="gallery-subtitle">Escolha o estilo que combina com você</p>
 
     <div class="shoe-layout">
-
       <button class="shoe-nav prev">‹</button>
 
       <div class="shoe-track">
         <figure class="shoe active">
-          <img src="tamanco.png" alt="Tamanco" />
+          <img src="tamanco.png" alt="Tamanco">
         </figure>
 
         <figure class="shoe">
-          <img src="sandalia.png" alt="Sandália" />
+          <img src="sandalia.png" alt="Sandália">
         </figure>
 
         <figure class="shoe">
-          <img src="bota.png" alt="Bota" />
+          <img src="bota.png" alt="Bota">
         </figure>
       </div>
 
       <button class="shoe-nav next">›</button>
-
     </div>
   </section>
 
@@ -428,6 +334,51 @@
   </footer>
 
 </main>
+
+
+<!-- ===================================================== -->
+<!-- OVERRIDE FINAL — GARANTE FUNCIONAR NO MOBILE E DESKTOP -->
+<!-- ===================================================== -->
+
+<style>
+  a.cta-button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    padding: 16px 22px !important;
+    border-radius: 999px !important;
+
+    background: #ffffff !important;
+    color: #000000 !important;
+
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18) !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+  }
+
+  a.cta-button .label {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  a.cta-button .cta-icon {
+    width: 26px !important;
+    height: 26px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  a.cta-button .cta-chevron {
+    margin-left: auto !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+</style>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
