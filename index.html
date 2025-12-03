@@ -121,7 +121,7 @@
       animation: floatPulse 3s ease-in-out infinite;
     }
 
-    /* animação bem leve */
+    /* animação leve */
     @keyframes floatPulse {
       0%, 100% { transform: translateY(0) scale(1); }
       50% { transform: translateY(-2px) scale(1.01); }
@@ -199,8 +199,8 @@
 
     .hero-image img {
       width: 100%;
-      height: auto;       /* NÃO corta a imagem */
-      object-fit: contain; /* Mostra a foto toda */
+      height: auto;
+      object-fit: contain;
       display: block;
     }
 
@@ -258,7 +258,7 @@
     .gallery-card img {
       width: 100%;
       height: auto;
-      max-height: 220px;   /* limita sem cortar */
+      max-height: 220px;
       object-fit: contain;
       border-radius: 12px;
       background: #fafafa;
@@ -284,7 +284,8 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-text">
-        <img src="casadasandalia/logo.png" alt="Logo Casa das Sandálias" class="logo-bg" />
+        <!-- agora o logo está no mesmo nível do index -->
+        <img src="logo.png" alt="Logo Casa das Sandálias" class="logo-bg" />
 
         <div class="hero-heading">
           <h1>CASA DAS SANDÁLIAS</h1>
@@ -334,7 +335,7 @@
       <!-- FOTO RAQUEL EM DESTAQUE -->
       <div class="hero-image-wrapper">
         <div class="hero-image">
-          <img src="casadasandalia/raquel.png" alt="Cliente usando sandália - Raquel" />
+          <img src="raquel.png" alt="Cliente usando sandália - Raquel" />
         </div>
       </div>
     </section>
@@ -346,17 +347,17 @@
 
       <div class="gallery-grid">
         <article class="gallery-card">
-          <img src="casadasandalia/tamanco.png" alt="Tamanco - Casa das Sandálias" />
+          <img src="tamanco.png" alt="Tamanco - Casa das Sandálias" />
           <p class="gallery-label">Tamancos estilosos para o dia a dia</p>
         </article>
 
         <article class="gallery-card">
-          <img src="casadasandalia/sandalia.png" alt="Sandália - Casa das Sandálias" />
+          <img src="sandalia.png" alt="Sandália - Casa das Sandálias" />
           <p class="gallery-label">Sandálias confortáveis para todas as ocasiões</p>
         </article>
 
         <article class="gallery-card">
-          <img src="casadasandalia/bota.png" alt="Bota - Casa das Sandálias" />
+          <img src="bota.png" alt="Bota - Casa das Sandálias" />
           <p class="gallery-label">Botas perfeitas para compor seus looks</p>
         </article>
       </div>
